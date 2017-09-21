@@ -19,6 +19,10 @@ namespace WindowsFormsApp1
         int addend1;
         int addend2;
 
+        //This integer variable keeps track of time remaining
+        int timeLeft;
+
+
         public MathQuiz()
         {
             InitializeComponent();
@@ -39,7 +43,7 @@ namespace WindowsFormsApp1
 
         }
         public void StartTheQuiz()
-        {
+        { 
             //Fill in the addition problem
             //generate two random numbers to add
             //store the values in the variables 'addend1' and 'addend2'
@@ -53,12 +57,38 @@ namespace WindowsFormsApp1
 
             //'sum' is the name of the NumericUpDown control.
             //This step makes sure it's value is zero before adding by values to it
-            Sum.Value = 0;
+            sum.Value = 0;
+
+            //start timer
+            timeLeft = 30;
+            timeLabel.Text = "30 seconds";
+            timer1.Start();
         }
         private void startButton_Click_1(object sender, EventArgs e)
         {
             StartTheQuiz();
             startButton.Enabled = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                //display the new time left
+                // by updating the time left label
+                timeLeft = timeLeft - 1;
+                timeLabel.Text = timeLeft + " seconds";
+                
+            }
+            else
+            {
+                //If the user ran out of time, stop the time, show messageBox, and fill in the ansers.
+                timer1.Stop();
+                timeLabel.Text = "Time's up!";
+                MessageBox.Show("You didn't finish in time.", "Sorry!");
+                sum.Value = addend1 + addend2;
+                startButton.Enabled = true;
+            }
         }
     }
     
