@@ -68,7 +68,6 @@
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(200, 30);
             this.timeLabel.TabIndex = 0;
-            this.timeLabel.Visible = false;
             this.timeLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
