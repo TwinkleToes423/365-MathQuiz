@@ -72,13 +72,20 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (timeLeft > 0)
+            if (CheckTheAnswer())
+            {
+                //if method returns true, then user got answer correct if galse show messagebox
+                timer1.Stop();
+                MessageBox.Show("You got all the answers right!", "Congratulations!");
+                startButton.Enabled = true;
+            }
+            else if (timeLeft > 0)
             {
                 //display the new time left
                 // by updating the time left label
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " seconds";
-                
+
             }
             else
             {
@@ -89,6 +96,13 @@ namespace WindowsFormsApp1
                 sum.Value = addend1 + addend2;
                 startButton.Enabled = true;
             }
+        }
+        private bool CheckTheAnswer()
+        {
+            if (addend1 + addend2 == sum.Value)
+                return true;
+            else
+                return false;
         }
     }
     
