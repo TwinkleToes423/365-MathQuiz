@@ -45,16 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MathQuiz.cs">
+    <Compile Include="..\..\..\..\Desktop\MathQuiz.cs">
       <SubType>Form</SubType>
+      <Link>MathQuiz.cs</Link>
     </Compile>
-    <Compile Include="MathQuiz.Designer.cs">
+    <Compile Include="..\..\..\..\Desktop\MathQuiz.Designer.cs">
       <DependentUpon>MathQuiz.cs</DependentUpon>
+      <Link>MathQuiz.Designer.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MathQuiz.resx">
+    <EmbeddedResource Include="..\..\..\..\Desktop\MathQuiz.resx">
       <DependentUpon>MathQuiz.cs</DependentUpon>
+      <Link>MathQuiz.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

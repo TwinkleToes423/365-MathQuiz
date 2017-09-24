@@ -23,6 +23,14 @@ namespace WindowsFormsApp1
         int minuend;
         int subtrahend;
 
+        //integer variables for multiplication
+        int multiplicand;
+        int multiplier;
+
+        //integer variable autofill for division
+        int dividend;
+        int divisor;
+
         //This integer variable keeps track of time remaining
         int timeLeft;
 
@@ -70,6 +78,15 @@ namespace WindowsFormsApp1
             minusRightLabel.Text = subtrahend.ToString();
             difference.Value = 0;
 
+            //autofill multiplication problem values
+            multiplicand = randomizer.Next(2, 11);
+            multiplier = randomizer.Next(2, 11);
+            timesLeftLabel.Text = multiplicand.ToString();
+            timesRightLabel.Text = multiplier.ToString();
+
+            //autofill division problem values
+            divisor = randomizer.Next(2, 11);
+            int temporatyQuotient
             //start timer
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
