@@ -37,7 +37,7 @@
             this.plusRightLabel = new System.Windows.Forms.Label();
             this.sum = new System.Windows.Forms.NumericUpDown();
             this.difference = new System.Windows.Forms.NumericUpDown();
-            this.minusRightLable = new System.Windows.Forms.Label();
+            this.minusRightLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Minus = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 41);
             this.sum.TabIndex = 2;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
@@ -136,16 +137,17 @@
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 41);
             this.difference.TabIndex = 3;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
-            // minusRightLable
+            // minusRightLabel
             // 
-            this.minusRightLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minusRightLable.Location = new System.Drawing.Point(183, 125);
-            this.minusRightLable.Name = "minusRightLable";
-            this.minusRightLable.Size = new System.Drawing.Size(60, 50);
-            this.minusRightLable.TabIndex = 10;
-            this.minusRightLable.Text = "?";
-            this.minusRightLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.minusRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minusRightLabel.Location = new System.Drawing.Point(183, 125);
+            this.minusRightLabel.Name = "minusRightLabel";
+            this.minusRightLabel.Size = new System.Drawing.Size(60, 50);
+            this.minusRightLabel.TabIndex = 10;
+            this.minusRightLabel.Text = "?";
+            this.minusRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -184,6 +186,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(100, 41);
             this.numericUpDown1.TabIndex = 4;
+            this.numericUpDown1.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // timesRightLabel
             // 
@@ -232,6 +235,7 @@
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 41);
             this.quotient.TabIndex = 5;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // dividedRightLabel
             // 
@@ -307,7 +311,7 @@
             this.Controls.Add(this.multiplication);
             this.Controls.Add(this.timesLeftLabel);
             this.Controls.Add(this.difference);
-            this.Controls.Add(this.minusRightLable);
+            this.Controls.Add(this.minusRightLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Minus);
             this.Controls.Add(this.minusLeftLabel);
@@ -342,7 +346,7 @@
         private System.Windows.Forms.Label plusRightLabel;
         private System.Windows.Forms.NumericUpDown sum;
         private System.Windows.Forms.NumericUpDown difference;
-        private System.Windows.Forms.Label minusRightLable;
+        private System.Windows.Forms.Label minusRightLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label Minus;
         private System.Windows.Forms.Label minusLeftLabel;

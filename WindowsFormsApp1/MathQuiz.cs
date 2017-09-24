@@ -19,6 +19,10 @@ namespace WindowsFormsApp1
         int addend1;
         int addend2;
 
+        //for the subtraction problem 
+        int minuend;
+        int subtrahend;
+
         //This integer variable keeps track of time remaining
         int timeLeft;
 
@@ -59,6 +63,13 @@ namespace WindowsFormsApp1
             //This step makes sure it's value is zero before adding by values to it
             sum.Value = 0;
 
+            //fill in the subtraction problem 
+            minuend = randomizer.Next(1, 101);
+            subtrahend = randomizer.Next(1, minuend);
+            minusLeftLabel.Text = subtrahend.ToString();
+            minusRightLabel.Text = subtrahend.ToString();
+            difference.Value = 0;
+
             //start timer
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
@@ -94,15 +105,28 @@ namespace WindowsFormsApp1
                 timeLabel.Text = "Time's up!";
                 MessageBox.Show("You didn't finish in time.", "Sorry!");
                 sum.Value = addend1 + addend2;
+                difference.Value = minuend - subtrahend;
                 startButton.Enabled = true;
             }
         }
         private bool CheckTheAnswer()
         {
-            if (addend1 + addend2 == sum.Value)
+            if ((addend1 + addend2 == sum.Value) && (minuend - subtrahend == difference.Value))
                 return true;
             else
                 return false;
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            //Select the whole number in the 'sum' NumericUpDown control.
+            NumericUpDown answerBox = sender as NumericUpDown;
+
+                if (answerBox != null)
+                {
+                 int lengthOfAnser = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnser);
+                }
         }
     }
     
